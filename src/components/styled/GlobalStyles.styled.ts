@@ -4,8 +4,12 @@ const GlobalStyle = createGlobalStyle`
 :root {
     --base-font-size: 62.5%;
     --body-font: 'League Spartan', sans-serif;
-    --body-font-size: 1.6rem;
-    --body-line-height: 1.5;
+    --body-font-size-sm: 1.1rem;
+    --body-line-height-sm: 2;
+    --body-font-size-md: 1.1rem;
+    --body-line-height-md: 2;
+    --body-font-size-lg: 1.4rem;
+    --body-line-height-lg: 1.75;
     /* COLORS */
     --white: #fff;
     --very-dark-blue: #070724;
@@ -21,6 +25,41 @@ const GlobalStyle = createGlobalStyle`
     --yellow: #EDA249;
     /* HEADINGS */
     --heading-font: 'Antonio', sans-serif;
+    --logo-size: 2.8rem;
+    --logo-height: 1.25;
+    --planet-title-size-sm: 4rem;
+    --planet-title-height-sm: 1.3;
+    --planet-title-size-md: 4.8rem;
+    --planet-title-height-md: 1.3;
+    --planet-title-size-lg: 8rem;
+    --planet-title-height-lg: 1.3;
+    /* MENU */
+    --planet-menu-item-size-sm: 1.5rem;
+    --planet-menu-item-height-sm: 1.65;
+    --planet-menu-item-size-md: 1.1rem;
+    --planet-menu-item-height-md: 2;
+    --planet-menu-item-size-lg: 1.1rem;
+    --planet-menu-item-height-lg: 2;
+    /* TABS */
+    --planet-tab-size-sm: .9rem;
+    --planet-tab-height-sm: 1.1;
+    --planet-tab-size-md: .9rem;
+    --planet-tab-height-md: 1.1;
+    --planet-tab-size-lg: 1.2rem;
+    --planet-tab-height-lg: 1.2;
+    /* MISC */
+    --planet-feature-title-size-sm: .8rem;
+    --planet-feature-title-height-sm: 2;
+    --planet-feature-title-size-md: .8rem;
+    --planet-feature-title-height-md: 2;
+    --planet-feature-title-size-lg: 1.1rem;
+    --planet-feature-title-height-lg: 2;
+    --planet-feature-desc-size-sm: 2rem;
+    --planet-feature-desc-height-sm: 1.25;
+    --planet-feature-desc-size-md: 2.4rem;
+    --planet-feature-desc-height-md: 1.3;
+    --planet-feature-desc-size-lg: 4rem;
+    --planet-feature-desc-height-lg: 1.3;
     /* SPACING */
     --website-padding-sm: 8px;
     --website-padding-md: 16px;
