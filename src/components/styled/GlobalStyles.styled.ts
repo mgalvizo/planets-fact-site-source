@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import Stars from '../../assets/background-stars.svg';
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -96,8 +97,11 @@ html {
 
 body {
     background-color: var(--very-dark-blue);
-    font-size: var(--body-font-size);
-    line-height: var(--body-line-height);
+    background-image: url(${Stars});
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: var(--body-font-size-sm);
+    line-height: var(--body-line-height-sm);
     overflow-x: hidden;
     font-family: var(--body-font);
     color: var(--white);
@@ -129,6 +133,32 @@ a:visited:hover {
     clip: rect(1px 1px 1px 1px);
     /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+}
+
+.root__content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+
+// 620px
+@media only screen and (min-width: 38.75em) {
+    body {
+        font-size: var(--body-font-size-md);
+        line-height: var(--body-line-height-md);
+    }
+}
+
+// 1024px 
+@media only screen and (min-width: 64em) {
+    body {
+        font-size: var(--body-font-size-lg);
+        line-height: var(--body-line-height-lg);
+    }
 }
 `;
 
