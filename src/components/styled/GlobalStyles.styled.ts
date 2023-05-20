@@ -67,6 +67,11 @@ const GlobalStyle = createGlobalStyle`
     --planet-feature-desc-height-md: 1.3;
     --planet-feature-desc-size-lg: 4rem;
     --planet-feature-desc-height-lg: 1.3;
+    /* ERROR */
+    --error-title-size: 3.2rem;
+    --error-title-height: 1.25;
+    --error-text-size: 1.6rem;
+    --error-text-height: 1.5;
     /* SPACING */
     --website-padding-sm: 8px;
     --website-padding-md: 16px;
@@ -78,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
     --website-margin-md: 16px;
     --website-margin-lg: 24px;
     --website-margin-xlg: 32px;
+    --website-margin-xlg2: 40px;
     /* MEDIA */
     --media-min: 20em; /* 320px */
     --media-tablet: 30em; /* 480px */
@@ -113,6 +119,12 @@ body {
     overflow-x: hidden;
     font-family: var(--body-font);
     color: var(--white);
+}
+
+header,
+main, 
+section {
+    width: 100%;
 }
 
 h1,
@@ -165,6 +177,7 @@ a:visited:hover {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0 var(--website-padding-lg);
 
     .stripe__content {
         flex-basis: var(--max-content-width);
@@ -177,6 +190,10 @@ a:visited:hover {
         font-size: var(--body-font-size-md);
         line-height: var(--body-line-height-md);
     }
+
+    .stripe {
+        padding: 0 var(--website-padding-xlg2);
+    }
 }
 
 // 1024px 
@@ -184,6 +201,10 @@ a:visited:hover {
     body {
         font-size: var(--body-font-size-lg);
         line-height: var(--body-line-height-lg);
+    }
+
+    .stripe {
+        padding: 0 var(--website-padding-xlg);
     }
 }
 `;

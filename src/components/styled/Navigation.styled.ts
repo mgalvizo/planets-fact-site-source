@@ -10,6 +10,7 @@ const StyledNavigation = styled.nav`
 
     // 1024px
     @media only screen and (min-width: 64em) {
+        height: 100%;
         width: auto;
     }
 `;

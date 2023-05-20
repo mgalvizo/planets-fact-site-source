@@ -82,28 +82,57 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
         a:visited,
         a:link {
             padding: 0;
+            transition: box-shadow 0.25s ease-in-out;
 
             &::before {
                 content: none;
             }
-
-            &.active {
-                &:before {
-                    content: '';
-                    top: auto;
-                    bottom: 0;
-                    border-radius: 0;
-                    width: 100%;
-                    height: 1px;
-                }
-            }
         }
+
+        ${({ planetName }) =>
+            planetName &&
+            css`
+                a:link,
+                a:visited {
+                    &.${planetName} {
+                        &:hover {
+                            box-shadow: 0 4px 0 0
+                                ${PLANET_COLORS[
+                                    planetName as keyof typeof PLANET_COLORS
+                                ]};
+                        }
+                    }
+                }
+            `}
     }
 
     // 1024px
     @media only screen and (min-width: 64em) {
+        height: inherit;
         font-size: var(--planet-menu-item-size-lg);
         line-height: var(--planet-menu-item-height-lg);
+
+        a:visited,
+        a:link {
+            height: inherit;
+        }
+
+        ${({ planetName }) =>
+            planetName &&
+            css`
+                a:link,
+                a:visited {
+                    &.${planetName} {
+                        &:hover {
+                            box-shadow: 0 4px 0 0
+                                ${PLANET_COLORS[
+                                    planetName as keyof typeof PLANET_COLORS
+                                ]}
+                                inset;
+                        }
+                    }
+                }
+            `}
     }
 `;
 

@@ -43,6 +43,7 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
 
     // 1024px
     @media only screen and (min-width: 64em) {
+        height: inherit;
         gap: var(--website-padding-xlg);
     }
 `;

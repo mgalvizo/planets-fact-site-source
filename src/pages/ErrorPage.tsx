@@ -3,6 +3,7 @@ import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
 import Header from '../components/Header/Header.component';
 import Logo from '../components/Logo/Logo.component';
 import Navigation from '../components/Navigation/Navigation.component';
+import ErrorContent from '../components/ErrorContent/ErrorContent.component';
 
 const ErrorPage = () => {
     const error = useRouteError();
@@ -32,10 +33,7 @@ const ErrorPage = () => {
                         </div>
                     </div>
                 </Header>
-                <main>
-                    <h2>{title}</h2>
-                    <p>{message}</p>
-                </main>
+                <ErrorContent title={title} message={message} />
             </div>
         </>
     );

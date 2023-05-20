@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,7 +10,8 @@ const StyledHeader = styled.header`
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
     .stripe {
-        padding: var(--website-padding-sm) var(--website-padding-lg);
+        padding-top: var(--website-padding-sm);
+        padding-bottom: var(--website-padding-sm);
     }
 
     .stripe__content {
@@ -29,7 +29,8 @@ const StyledHeader = styled.header`
 
         .stripe {
             height: 100%;
-            padding: var(--website-padding-xlg) var(--website-padding-xlg2);
+            padding-top: var(--website-padding-xlg);
+            padding-bottom: var(--website-padding-xlg);
         }
 
         .stripe__content {
@@ -43,7 +44,8 @@ const StyledHeader = styled.header`
         height: var(--header-height-lg);
 
         .stripe {
-            padding: var(--website-padding-sm) var(--website-padding-xlg);
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .stripe__content {

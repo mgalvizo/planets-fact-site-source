@@ -7,8 +7,9 @@ import {
     Await,
 } from 'react-router-dom';
 import PLANETS from '../dev-data/planets.json';
+import PlanetDetailContent from '../components/PlanetDetailContent/PlanetDetailContent.component';
 
-interface Planet {
+export interface Planet {
     name: string;
     overview: {
         content: string;
@@ -72,7 +73,9 @@ const PlanetDetailPage = () => {
         <>
             <Suspense fallback={<p>Loading...</p>}>
                 <Await resolve={planet}>
-                    {loadedPlanet => <h2>{loadedPlanet.name}</h2>}
+                    {loadedPlanet => (
+                        <PlanetDetailContent planet={loadedPlanet} />
+                    )}
                 </Await>
             </Suspense>
         </>
