@@ -72,7 +72,7 @@ const PlanetDetailPage = () => {
         <>
             <Suspense fallback={<p>Loading...</p>}>
                 <Await resolve={planet}>
-                    {loadedPlanet => <h1>{loadedPlanet.name}</h1>}
+                    {loadedPlanet => <h2>{loadedPlanet.name}</h2>}
                 </Await>
             </Suspense>
         </>

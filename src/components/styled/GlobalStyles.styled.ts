@@ -3,6 +3,7 @@ import Stars from '../../assets/background-stars.svg';
 
 const GlobalStyle = createGlobalStyle`
 :root {
+    --max-content-width: 1110px;
     --base-font-size: 62.5%;
     --body-font: 'League Spartan', sans-serif;
     --body-font-size-sm: 1.1rem;
@@ -24,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     --red-orange: #D14C32;
     --red: #D83A34;
     --yellow: #EDA249;
+    --light-gray: #979797;
     /* HEADINGS */
     --heading-font: 'Antonio', sans-serif;
     --logo-size: 2.8rem;
@@ -48,6 +50,8 @@ const GlobalStyle = createGlobalStyle`
     --planet-tab-height-md: 1.1;
     --planet-tab-size-lg: 1.2rem;
     --planet-tab-height-lg: 1.2;
+    /* HEADER */
+    --header-height-sm: 69px;
     /* MISC */
     --planet-feature-title-size-sm: .8rem;
     --planet-feature-title-height-sm: 2;
@@ -66,6 +70,8 @@ const GlobalStyle = createGlobalStyle`
     --website-padding-md: 16px;
     --website-padding-lg: 24px;
     --website-padding-xlg: 32px;
+    --website-padding-xlg2: 40px;
+    --website-margin-xsm: 4px;
     --website-margin-sm: 8px;
     --website-margin-md: 16px;
     --website-margin-lg: 24px;
@@ -107,6 +113,12 @@ body {
     color: var(--white);
 }
 
+h1,
+h2 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
 img {
     width: auto;
     max-width: 100%;
@@ -143,6 +155,18 @@ a:visited:hover {
     align-items: center;
     flex-wrap: wrap;
     overflow-x: hidden;
+}
+
+.stripe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .stripe__content {
+        flex-basis: var(--max-content-width);
+    }
 }
 
 // 620px
