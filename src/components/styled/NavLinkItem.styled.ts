@@ -95,7 +95,8 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                 a:link,
                 a:visited {
                     &.${planetName} {
-                        &:hover {
+                        &:hover,
+                        &.active {
                             box-shadow: 0 4px 0 0
                                 ${PLANET_COLORS[
                                     planetName as keyof typeof PLANET_COLORS
@@ -123,7 +124,8 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                 a:link,
                 a:visited {
                     &.${planetName} {
-                        &:hover {
+                        &:hover,
+                        &.active {
                             box-shadow: 0 4px 0 0
                                 ${PLANET_COLORS[
                                     planetName as keyof typeof PLANET_COLORS
