@@ -52,6 +52,8 @@ const GlobalStyle = createGlobalStyle`
     --planet-tab-height-lg: 1.2;
     /* HEADER */
     --header-height-sm: 69px;
+    --header-height-md: 159px;
+    --header-height-lg: 85px;
     /* MISC */
     --planet-feature-title-size-sm: .8rem;
     --planet-feature-title-height-sm: 2;

@@ -15,6 +15,7 @@ const PLANET_COLORS = {
 const StyledNavLinkItem = styled.li<NavLinkItemProps>`
     font-size: var(--planet-menu-item-size-sm);
     line-height: var(--planet-menu-item-height-sm);
+    letter-spacing: 1px;
 
     &:not(:last-child) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -64,6 +65,46 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                 }
             }
         `}
+
+    // 620px
+    @media only screen and (min-width: 38.75em) {
+        font-size: var(--planet-menu-item-size-md);
+        line-height: var(--planet-menu-item-height-md);
+
+        &:not(:last-child) {
+            border-bottom: 0;
+        }
+
+        .chevron {
+            display: none;
+        }
+
+        a:visited,
+        a:link {
+            padding: 0;
+
+            &::before {
+                content: none;
+            }
+
+            &.active {
+                &:before {
+                    content: '';
+                    top: auto;
+                    bottom: 0;
+                    border-radius: 0;
+                    width: 100%;
+                    height: 1px;
+                }
+            }
+        }
+    }
+
+    // 1024px
+    @media only screen and (min-width: 64em) {
+        font-size: var(--planet-menu-item-size-lg);
+        line-height: var(--planet-menu-item-height-lg);
+    }
 `;
 
 export default StyledNavLinkItem;

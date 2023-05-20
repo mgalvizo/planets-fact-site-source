@@ -27,6 +27,24 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
         transform: translateX(-100%);
         transition: transform 0.25s;
     }
+
+    // 620px
+    @media only screen and (min-width: 38.75em) {
+        position: static;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: var(--website-padding-lg);
+        background-color: transparent;
+    }
+
+    // 1024px
+    @media only screen and (min-width: 64em) {
+        gap: var(--website-padding-xlg);
+    }
 `;
 
 export default StyledMobileNavLinks;

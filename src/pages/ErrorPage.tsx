@@ -1,5 +1,8 @@
 import React from 'react';
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
+import Header from '../components/Header/Header.component';
+import Logo from '../components/Logo/Logo.component';
+import Navigation from '../components/Navigation/Navigation.component';
 
 const ErrorPage = () => {
     const error = useRouteError();
@@ -21,8 +24,18 @@ const ErrorPage = () => {
     return (
         <>
             <div className="root__content">
-                <h1>{title}</h1>
-                <p>{message}</p>
+                <Header>
+                    <div className="stripe">
+                        <div className="stripe__content">
+                            <Logo />
+                            <Navigation />
+                        </div>
+                    </div>
+                </Header>
+                <main>
+                    <h2>{title}</h2>
+                    <p>{message}</p>
+                </main>
             </div>
         </>
     );
