@@ -41,10 +41,11 @@ const Navigation = () => {
                     isVisible={isVisible}
                 />
             )}
-            {isSmallScreen && isVisible && (
-                <NavLinks isVisible={isVisible} onClick={onClickHandler} />
-            )}
-            {!isSmallScreen && <NavLinks />}
+            <NavLinks
+                isVisible={isVisible}
+                isSmallScreen={isSmallScreen}
+                onClick={onClickHandler}
+            />
         </StyledNavigation>
     );
 };

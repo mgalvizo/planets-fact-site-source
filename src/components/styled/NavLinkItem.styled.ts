@@ -50,9 +50,6 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
         }
     }
 
-    .chevron {
-    }
-
     ${({ planetName }) =>
         planetName &&
         css`
