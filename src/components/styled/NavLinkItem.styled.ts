@@ -95,7 +95,6 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                 a:link,
                 a:visited {
                     &.${planetName} {
-                        &:hover,
                         &.active {
                             box-shadow: 0 4px 0 0
                                 ${PLANET_COLORS[
