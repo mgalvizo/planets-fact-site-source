@@ -9,14 +9,14 @@ interface PlanetImageProps {
 }
 
 interface PlanetImages {
-    name: string;
+    planetName: string;
     overview: string;
     structure: string;
     geology: string;
 }
 
 const PlanetImage = ({ selectedCharacteristic, images }: PlanetImageProps) => {
-    const { name, overview, structure, geology } = images;
+    const { planetName, overview, structure, geology } = images;
 
     let imgKey: string;
     let imgGeologyKey: string;
@@ -38,7 +38,7 @@ const PlanetImage = ({ selectedCharacteristic, images }: PlanetImageProps) => {
                 <figure>
                     <img
                         src={getImageByKey(imgKey)}
-                        alt={`${name} ${selectedCharacteristic}`}
+                        alt={`${planetName} ${selectedCharacteristic}`}
                         loading="lazy"
                     />
                 </figure>
@@ -49,14 +49,14 @@ const PlanetImage = ({ selectedCharacteristic, images }: PlanetImageProps) => {
                     <figure>
                         <img
                             src={getImageByKey(imgKey)}
-                            alt={`${name} overview`}
+                            alt={`${planetName} overview`}
                             loading="lazy"
                         />
                     </figure>
                     <figure>
                         <img
                             src={getImageByKey(imgGeologyKey)}
-                            alt={`${name} ${selectedCharacteristic}`}
+                            alt={`${planetName} ${selectedCharacteristic}`}
                             loading="lazy"
                         />
                     </figure>

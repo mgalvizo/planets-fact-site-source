@@ -15,7 +15,7 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
         useState('overview');
 
     const {
-        name,
+        name: planetName,
         overview,
         structure,
         geology,
@@ -24,9 +24,9 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
         radius,
         temperature,
     } = planet;
-    const planetImg = name.toLowerCase();
-    const planetInternalImg = `${name.toLowerCase()}Internal`;
-    const planetGeologyImg = `${name.toLowerCase()}Geology`;
+    const planetImg = planetName.toLowerCase();
+    const planetInternalImg = `${planetName.toLowerCase()}Internal`;
+    const planetGeologyImg = `${planetName.toLowerCase()}Geology`;
 
     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
         const { id } = e.currentTarget;
@@ -35,20 +35,21 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
     };
 
     const PHYSICAL_CHARACTERISTICS = {
-        name,
+        planetName,
         overview,
         structure,
         geology,
     };
 
     const PLANET_IMAGES = {
-        name,
+        planetName,
         overview: planetImg,
         structure: planetInternalImg,
         geology: planetGeologyImg,
     };
 
     const PLANET_STATS = {
+        planetName,
         rotation,
         revolution,
         radius,
@@ -63,6 +64,7 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
                         <PlanetButtonList
                             onButtonClick={onClickHandler}
                             selectedCharacteristic={selectedCharacteristic}
+                            planetName={planetName}
                         />
                     </div>
                 </div>

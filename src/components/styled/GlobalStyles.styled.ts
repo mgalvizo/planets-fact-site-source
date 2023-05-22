@@ -44,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
     --planet-menu-item-size-lg: 1.1rem;
     --planet-menu-item-height-lg: 2;
     /* BUTTON */
+    --planet-button-list-height: 50px;
     --planet-button-size-sm: .9rem;
     --planet-button-height-sm: 1.1;
     --planet-button-size-md: .9rem;

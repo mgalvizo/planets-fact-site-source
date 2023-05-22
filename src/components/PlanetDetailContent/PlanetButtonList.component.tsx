@@ -6,37 +6,39 @@ interface PlanetButtonListProps {
     children?: ReactNode;
     onButtonClick: (e: MouseEvent<HTMLButtonElement>) => void;
     selectedCharacteristic: string;
+    planetName: string;
 }
 
 const MAPPING_PHYSICAL_CHARACTERISTICS = [
     {
         id: 1,
-        name: 'overview',
+        characteristicName: 'overview',
     },
     {
         id: 2,
-        name: 'structure',
+        characteristicName: 'structure',
     },
     {
         id: 3,
-        name: 'geology',
+        characteristicName: 'geology',
     },
 ];
 
 const PlanetButtonList = ({
     onButtonClick,
     selectedCharacteristic,
+    planetName,
 }: PlanetButtonListProps) => {
     const buttons = MAPPING_PHYSICAL_CHARACTERISTICS.map(characteristic => {
         const { id } = characteristic;
         return (
-            <li key={id}>
-                <PlanetButtonItem
-                    onClick={onButtonClick}
-                    characteristic={characteristic}
-                    selectedCharacteristic={selectedCharacteristic}
-                />
-            </li>
+            <PlanetButtonItem
+                key={id}
+                onClick={onButtonClick}
+                characteristic={characteristic}
+                selectedCharacteristic={selectedCharacteristic}
+                planetName={planetName}
+            />
         );
     });
 

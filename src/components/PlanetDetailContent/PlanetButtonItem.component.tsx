@@ -3,7 +3,7 @@ import StyledPlanetButtonItem from '../styled/PlanetButtonItem.styled';
 
 interface Characteristic {
     id: number;
-    name: string;
+    characteristicName: string;
 }
 
 interface PlanetButtonItemProps {
@@ -11,23 +11,34 @@ interface PlanetButtonItemProps {
     onClick: (e: MouseEvent<HTMLButtonElement>) => void;
     characteristic: Characteristic;
     selectedCharacteristic: string;
+    planetName: string;
 }
 
 const PlanetButtonItem = ({
     onClick,
     characteristic,
     selectedCharacteristic,
+    planetName,
 }: PlanetButtonItemProps) => {
-    const { id, name } = characteristic;
+    const { id, characteristicName } = characteristic;
 
     return (
         <StyledPlanetButtonItem
-            onClick={onClick}
-            id={name}
-            className={selectedCharacteristic === name ? 'active' : ''}
+            planetName={planetName.toLowerCase()}
+            characteristicName={characteristicName}
         >
-            <span className="number">{`0${id}`}</span>
-            <span className="name">{name.toUpperCase()}</span>
+            <button
+                id={characteristicName}
+                onClick={onClick}
+                className={`${characteristicName} ${
+                    selectedCharacteristic === characteristicName
+                        ? 'active'
+                        : ''
+                }`}
+            >
+                <span className="number">{`0${id}`}</span>
+                <span className="name">{characteristicName.toUpperCase()}</span>
+            </button>
         </StyledPlanetButtonItem>
     );
 };

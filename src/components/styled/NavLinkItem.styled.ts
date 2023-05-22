@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
-import { NavLinkItemProps } from '../Navigation/NavLinkItem.component';
 
-const PLANET_COLORS = {
+interface StyledNavLinkItemProps {
+    planetName: string;
+}
+
+export const PLANET_COLORS = {
     mercury: '#DEF4FC',
     venus: '#F7CC7F',
     earth: '#545BFE',
@@ -12,7 +15,7 @@ const PLANET_COLORS = {
     neptune: '#497EFA',
 };
 
-const StyledNavLinkItem = styled.li<NavLinkItemProps>`
+const StyledNavLinkItem = styled.li<StyledNavLinkItemProps>`
     font-size: var(--planet-menu-item-size-sm);
     line-height: var(--planet-menu-item-height-sm);
     letter-spacing: 1px;
@@ -97,14 +100,12 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
             css`
                 a:link,
                 a:visited {
-                    &.${planetName} {
-                        &.active {
-                            color: var(--white);
-                            box-shadow: 0 4px 0 0
-                                ${PLANET_COLORS[
-                                    planetName as keyof typeof PLANET_COLORS
-                                ]};
-                        }
+                    &.active {
+                        color: var(--white);
+                        box-shadow: 0 4px 0 0
+                            ${PLANET_COLORS[
+                                planetName as keyof typeof PLANET_COLORS
+                            ]};
                     }
                 }
             `}
@@ -126,16 +127,14 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
             css`
                 a:link,
                 a:visited {
-                    &.${planetName} {
-                        &:hover,
-                        &.active {
-                            color: var(--white);
-                            box-shadow: 0 4px 0 0
-                                ${PLANET_COLORS[
-                                    planetName as keyof typeof PLANET_COLORS
-                                ]}
-                                inset;
-                        }
+                    &:hover,
+                    &.active {
+                        color: var(--white);
+                        box-shadow: 0 4px 0 0
+                            ${PLANET_COLORS[
+                                planetName as keyof typeof PLANET_COLORS
+                            ]}
+                            inset;
                     }
                 }
             `}

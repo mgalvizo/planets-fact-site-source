@@ -6,6 +6,7 @@ const StyledPlanetButtonList = styled.ul`
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    height: var(--planet-button-list-height);
 `;
 
 export default StyledPlanetButtonList;

@@ -9,7 +9,7 @@ interface PlanetInfoProps {
 }
 
 interface PhysicalCharacteristics {
-    name: string;
+    planetName: string;
     overview: {
         content: string;
         source: string;
@@ -28,7 +28,7 @@ const PlanetInfo = ({
     selectedCharacteristic,
     characteristics,
 }: PlanetInfoProps) => {
-    const { name, overview, structure, geology } = characteristics;
+    const { planetName, overview, structure, geology } = characteristics;
 
     let characteristicDescription;
     let characteristicSource;
@@ -46,7 +46,7 @@ const PlanetInfo = ({
 
     return (
         <StyledPlanetInfo>
-            <h2>{name}</h2>
+            <h2>{planetName}</h2>
             <p className="description">{characteristicDescription}</p>
             <p className="source">
                 <a href={characteristicSource} target="_blank" rel="noreferrer">
