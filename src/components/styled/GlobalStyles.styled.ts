@@ -43,30 +43,30 @@ const GlobalStyle = createGlobalStyle`
     --planet-menu-item-height-md: 2;
     --planet-menu-item-size-lg: 1.1rem;
     --planet-menu-item-height-lg: 2;
-    /* TABS */
-    --planet-tab-size-sm: .9rem;
-    --planet-tab-height-sm: 1.1;
-    --planet-tab-size-md: .9rem;
-    --planet-tab-height-md: 1.1;
-    --planet-tab-size-lg: 1.2rem;
-    --planet-tab-height-lg: 1.2;
+    /* BUTTON */
+    --planet-button-size-sm: .9rem;
+    --planet-button-height-sm: 1.1;
+    --planet-button-size-md: .9rem;
+    --planet-button-height-md: 1.1;
+    --planet-button-size-lg: 1.2rem;
+    --planet-button-height-lg: 1.2;
     /* HEADER */
     --header-height-sm: 69px;
     --header-height-md: 159px;
     --header-height-lg: 85px;
     /* MISC */
-    --planet-feature-title-size-sm: .8rem;
-    --planet-feature-title-height-sm: 2;
-    --planet-feature-title-size-md: .8rem;
-    --planet-feature-title-height-md: 2;
-    --planet-feature-title-size-lg: 1.1rem;
-    --planet-feature-title-height-lg: 2;
-    --planet-feature-desc-size-sm: 2rem;
-    --planet-feature-desc-height-sm: 1.25;
-    --planet-feature-desc-size-md: 2.4rem;
-    --planet-feature-desc-height-md: 1.3;
-    --planet-feature-desc-size-lg: 4rem;
-    --planet-feature-desc-height-lg: 1.3;
+    --planet-stat-title-size-sm: .8rem;
+    --planet-stat-title-height-sm: 2;
+    --planet-stat-title-size-md: .8rem;
+    --planet-stat-title-height-md: 2;
+    --planet-stat-title-size-lg: 1.1rem;
+    --planet-stat-title-height-lg: 2;
+    --planet-stat-desc-size-sm: 2rem;
+    --planet-stat-desc-height-sm: 1.25;
+    --planet-stat-desc-size-md: 2.4rem;
+    --planet-stat-desc-height-md: 1.3;
+    --planet-stat-desc-size-lg: 4rem;
+    --planet-stat-desc-height-lg: 1.3;
     /* ERROR */
     --error-title-size: 3.2rem;
     --error-title-height: 1.25;
@@ -147,6 +147,12 @@ a:visited {
 a:link:hover,
 a:visited:hover {
     text-decoration: underline;
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    font-weight: bold;
 }
 
 .visually-hidden {

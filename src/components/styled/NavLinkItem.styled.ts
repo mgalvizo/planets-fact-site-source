@@ -81,8 +81,11 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
 
         a:visited,
         a:link {
+            color: rgba(255, 255, 255, 0.75);
             padding: 0;
-            transition: box-shadow 0.25s ease-in-out;
+            transition-property: color, box-shadow;
+            transition-duration: 0.25s;
+            transition-timing-function: ease-in-out;
 
             &::before {
                 content: none;
@@ -96,6 +99,7 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                 a:visited {
                     &.${planetName} {
                         &.active {
+                            color: var(--white);
                             box-shadow: 0 4px 0 0
                                 ${PLANET_COLORS[
                                     planetName as keyof typeof PLANET_COLORS
@@ -125,6 +129,7 @@ const StyledNavLinkItem = styled.li<NavLinkItemProps>`
                     &.${planetName} {
                         &:hover,
                         &.active {
+                            color: var(--white);
                             box-shadow: 0 4px 0 0
                                 ${PLANET_COLORS[
                                     planetName as keyof typeof PLANET_COLORS

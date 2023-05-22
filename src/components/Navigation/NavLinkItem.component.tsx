@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { NavLink } from 'react-router-dom';
 import StyledNavLinkItem from '../styled/NavLinkItem.styled';
-import Chevron from '../../assets/icon-chevron.svg';
+import iconChevron from '../../assets/icon-chevron.svg';
 
 export interface NavLinkItemProps {
     planetName: string;
@@ -17,7 +17,12 @@ const NavLinkItem = ({ planetName, onClick }: NavLinkItemProps) => {
                 className={planetName.toLowerCase()}
             >
                 {planetName.toUpperCase()}
-                <img className="chevron" src={Chevron} alt="Chevron" />
+                <img
+                    className="chevron"
+                    src={iconChevron}
+                    alt="Chevron"
+                    loading="lazy"
+                />
             </NavLink>
         </StyledNavLinkItem>
     );
