@@ -23,13 +23,17 @@ const Navigation = () => {
         };
     }, []);
 
-    let isSmallScreen;
+    let isSmallScreen: boolean | undefined;
 
     if (windowWidth) {
         isSmallScreen = windowWidth < 620;
     }
 
     const onClickHandler = (e: MouseEvent) => {
+        if (!isSmallScreen) {
+            return;
+        }
+
         setIsVisible(!isVisible);
     };
 

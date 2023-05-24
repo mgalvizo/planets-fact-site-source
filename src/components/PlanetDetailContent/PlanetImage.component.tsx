@@ -33,7 +33,10 @@ const PlanetImage = ({ selectedCharacteristic, images }: PlanetImageProps) => {
     }
 
     return (
-        <StyledPlanetImage>
+        <StyledPlanetImage
+            planetName={planetName}
+            className={planetName.toLowerCase()}
+        >
             {!imgGeologyKey && (
                 <figure>
                     <img

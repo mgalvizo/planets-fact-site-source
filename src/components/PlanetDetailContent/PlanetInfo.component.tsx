@@ -49,6 +49,7 @@ const PlanetInfo = ({
             <h2>{planetName}</h2>
             <p className="description">{characteristicDescription}</p>
             <p className="source">
+                Source:{' '}
                 <a href={characteristicSource} target="_blank" rel="noreferrer">
                     Wikipedia <img src={iconSource} alt="source" />
                 </a>

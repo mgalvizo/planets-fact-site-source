@@ -45,6 +45,8 @@ const GlobalStyle = createGlobalStyle`
     --planet-menu-item-height-lg: 2;
     /* BUTTON */
     --planet-button-list-height: 50px;
+    --planet-button-item-height-md: 40px;
+    --planet-button-item-height-lg: 48px;
     --planet-button-size-sm: .9rem;
     --planet-button-height-sm: 1.1;
     --planet-button-size-md: .9rem;
@@ -56,6 +58,9 @@ const GlobalStyle = createGlobalStyle`
     --header-height-md: 159px;
     --header-height-lg: 85px;
     /* MISC */
+    --planet-stat-box-height-sm: 48px;
+    --planet-stat-box-height-md: 88px;
+    --planet-stat-box-height-lg: 128px;
     --planet-stat-title-size-sm: .8rem;
     --planet-stat-title-height-sm: 2;
     --planet-stat-title-size-md: .8rem;
@@ -66,6 +71,8 @@ const GlobalStyle = createGlobalStyle`
     --planet-stat-desc-height-sm: 1.25;
     --planet-stat-desc-size-md: 2.4rem;
     --planet-stat-desc-height-md: 1.3;
+    --planet-stat-desc-size-mdlg: 3.2rem;
+    --planet-stat-desc-height-mdlg: 1.3;
     --planet-stat-desc-size-lg: 4rem;
     --planet-stat-desc-height-lg: 1.3;
     /* ERROR */
@@ -142,6 +149,9 @@ img {
 
 a:link,
 a:visited {
+    font-weight: bold;
+    color: var(--white);
+    color: rgba(255,255,255, 0.5);
     text-decoration: none;
 }
 

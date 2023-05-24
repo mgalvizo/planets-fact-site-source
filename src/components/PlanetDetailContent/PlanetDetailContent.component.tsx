@@ -70,19 +70,31 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
                 </div>
             </aside>
             <div className="planet-image">
-                <PlanetImage
-                    selectedCharacteristic={selectedCharacteristic}
-                    images={PLANET_IMAGES}
-                />
+                <div className="stripe">
+                    <div className="stripe__content">
+                        <PlanetImage
+                            selectedCharacteristic={selectedCharacteristic}
+                            images={PLANET_IMAGES}
+                        />
+                    </div>
+                </div>
             </div>
             <section className="planet-info">
-                <PlanetInfo
-                    selectedCharacteristic={selectedCharacteristic}
-                    characteristics={PHYSICAL_CHARACTERISTICS}
-                />
+                <div className="stripe">
+                    <div className="stripe__content">
+                        <PlanetInfo
+                            selectedCharacteristic={selectedCharacteristic}
+                            characteristics={PHYSICAL_CHARACTERISTICS}
+                        />
+                    </div>
+                </div>
             </section>
             <div className="planet-stats">
-                <PlanetStatsList stats={PLANET_STATS} />
+                <div className="stripe">
+                    <div className="stripe__content">
+                        <PlanetStatsList stats={PLANET_STATS} />
+                    </div>
+                </div>
             </div>
         </StyledPlanetDetailContent>
     );
