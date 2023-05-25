@@ -9,6 +9,12 @@ import {
 import PLANETS from '../dev-data/planets.json';
 import PlanetDetailContent from '../components/PlanetDetailContent/PlanetDetailContent.component';
 
+enum Physical_Characteristics {
+    overview = 'overview',
+    structure = 'structure',
+    geology = 'geology',
+}
+
 export interface Planet {
     name: string;
     overview: {
@@ -38,10 +44,10 @@ interface Data {
     planet: Planet;
 }
 
-const loadPlanet = async (name: string) => {
-    const planet = PLANETS.find(planet =>
-        planet.name.toLowerCase().includes(name)
-    );
+const loadPlanet = async (planetName: string) => {
+    const planet = PLANETS.find(planet => {
+        return planet.name.toLowerCase() === planetName;
+    });
 
     if (!planet) {
         throw json(
@@ -54,14 +60,26 @@ const loadPlanet = async (name: string) => {
 };
 
 const loader = async ({ request, params }: LoaderFunctionArgs) => {
-    const name = params.name;
+    const { planetName, characteristic } = params;
 
-    if (!name) {
+    if (!planetName || !characteristic) {
         return;
     }
 
+    // Checks if characteristic has a value of "overview" or "structure" or "geology"
+    if (
+        !Object.values(Physical_Characteristics).includes(
+            characteristic as unknown as Physical_Characteristics
+        )
+    ) {
+        throw json(
+            { message: 'Could not fetch details for selected characteristic' },
+            { status: 500 }
+        );
+    }
+
     return defer({
-        planet: await loadPlanet(name),
+        planet: await loadPlanet(planetName),
     });
 };
 

@@ -1,4 +1,5 @@
-import React, { useState, MouseEvent } from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { Planet } from '../../pages/PlanetDetailPage';
 import StyledPlanetDetailContent from '../styled/PlanetDetailContent.styled';
 import PlanetButtonList from './PlanetButtonList.component';
@@ -11,8 +12,7 @@ interface PlanetDetailContentProps {
 }
 
 const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
-    const [selectedCharacteristic, setSelectedCharacteristic] =
-        useState('overview');
+    const { characteristic } = useParams();
 
     const {
         name: planetName,
@@ -28,28 +28,19 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
     const planetInternalImg = `${planetName.toLowerCase()}Internal`;
     const planetGeologyImg = `${planetName.toLowerCase()}Geology`;
 
-    const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
-        const { id } = e.currentTarget;
-
-        setSelectedCharacteristic(id);
-    };
-
     const PHYSICAL_CHARACTERISTICS = {
-        planetName,
         overview,
         structure,
         geology,
     };
 
     const PLANET_IMAGES = {
-        planetName,
-        overview: planetImg,
-        structure: planetInternalImg,
-        geology: planetGeologyImg,
+        overviewImgKey: planetImg,
+        structureImgKey: planetInternalImg,
+        geologyImgKey: planetGeologyImg,
     };
 
     const PLANET_STATS = {
-        planetName,
         rotation,
         revolution,
         radius,
@@ -61,11 +52,7 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
             <aside className="planet-characteristics">
                 <div className="stripe">
                     <div className="stripe__content">
-                        <PlanetButtonList
-                            onButtonClick={onClickHandler}
-                            selectedCharacteristic={selectedCharacteristic}
-                            planetName={planetName}
-                        />
+                        <PlanetButtonList currentPlanetName={planetName} />
                     </div>
                 </div>
             </aside>
@@ -73,7 +60,8 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
                 <div className="stripe">
                     <div className="stripe__content">
                         <PlanetImage
-                            selectedCharacteristic={selectedCharacteristic}
+                            currentPlanetName={planetName}
+                            currentCharacteristic={characteristic}
                             images={PLANET_IMAGES}
                         />
                     </div>
@@ -83,7 +71,8 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
                 <div className="stripe">
                     <div className="stripe__content">
                         <PlanetInfo
-                            selectedCharacteristic={selectedCharacteristic}
+                            currentPlanetName={planetName}
+                            currentCharacteristic={characteristic}
                             characteristics={PHYSICAL_CHARACTERISTICS}
                         />
                     </div>

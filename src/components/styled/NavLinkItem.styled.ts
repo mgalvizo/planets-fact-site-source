@@ -7,7 +7,7 @@ interface StyledNavLinkItemProps {
 export const PLANET_COLORS = {
     mercury: '#419EBB',
     venus: '#F7CC7F',
-    earth: '#545BFE',
+    earth: '#6D2ED5',
     mars: '#FF6A45',
     jupiter: '#ECAD7A',
     saturn: '#FCCB6B',

@@ -71,6 +71,7 @@ const GlobalStyle = createGlobalStyle`
     --planet-stat-desc-height-sm: 1.25;
     --planet-stat-desc-size-md: 2.4rem;
     --planet-stat-desc-height-md: 1.3;
+    // ADJUSTMENT CASE
     --planet-stat-desc-size-mdlg: 3.2rem;
     --planet-stat-desc-height-mdlg: 1.3;
     --planet-stat-desc-size-lg: 4rem;
@@ -115,6 +116,8 @@ html {
     font-size: var(--base-font-size);
     font-family: sans-serif;
     box-sizing: border-box;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 body {

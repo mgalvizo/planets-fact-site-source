@@ -4,12 +4,12 @@ import iconSource from '../../assets/icon-source.svg';
 
 interface PlanetInfoProps {
     children?: ReactNode;
-    selectedCharacteristic: string;
+    currentPlanetName: string;
+    currentCharacteristic: string | undefined;
     characteristics: PhysicalCharacteristics;
 }
 
 interface PhysicalCharacteristics {
-    planetName: string;
     overview: {
         content: string;
         source: string;
@@ -25,28 +25,31 @@ interface PhysicalCharacteristics {
 }
 
 const PlanetInfo = ({
-    selectedCharacteristic,
+    currentPlanetName,
+    currentCharacteristic,
     characteristics,
 }: PlanetInfoProps) => {
-    const { planetName, overview, structure, geology } = characteristics;
+    const { overview, structure, geology } = characteristics;
 
     let characteristicDescription;
     let characteristicSource;
 
-    if (selectedCharacteristic === 'overview') {
+    if (currentCharacteristic === 'overview') {
         characteristicDescription = overview.content;
         characteristicSource = overview.source;
-    } else if (selectedCharacteristic === 'structure') {
+    } else if (currentCharacteristic === 'structure') {
         characteristicDescription = structure.content;
         characteristicSource = structure.source;
-    } else {
+    } else if (currentCharacteristic === 'geology') {
         characteristicDescription = geology.content;
         characteristicSource = geology.source;
+    } else {
+        return <></>;
     }
 
     return (
         <StyledPlanetInfo>
-            <h2>{planetName}</h2>
+            <h2>{currentPlanetName}</h2>
             <p className="description">{characteristicDescription}</p>
             <p className="source">
                 Source:{' '}

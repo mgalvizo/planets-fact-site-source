@@ -1,7 +1,7 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface StyledPlanetImageProps {
-    planetName: string;
+    currentPlanetName: string;
 }
 
 const PLANET_IMAGE_WIDTHS = {
@@ -32,46 +32,61 @@ const PLANET_IMAGE_WIDTHS = {
 };
 
 const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
-    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 
-    ${({ planetName }) =>
-        planetName &&
+    .characteristic.geology img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 82px;
+    }
+
+    ${({ currentPlanetName }) =>
+        currentPlanetName &&
         css`
-            &.${planetName.toLowerCase()} {
-                img {
-                    width: ${PLANET_IMAGE_WIDTHS[
-                        `${planetName.toLowerCase()}Sm` as keyof typeof PLANET_IMAGE_WIDTHS
-                    ]};
-                }
+            .characteristic img {
+                width: ${PLANET_IMAGE_WIDTHS[
+                    `${currentPlanetName.toLowerCase()}Sm` as keyof typeof PLANET_IMAGE_WIDTHS
+                ]};
             }
         `}
 
     // 620px
     @media only screen and (min-width: 38.75em) {
-        ${({ planetName }) =>
-            planetName &&
+        .characteristic.geology img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 109px;
+        }
+
+        ${({ currentPlanetName }) =>
+            currentPlanetName &&
             css`
-                &.${planetName.toLowerCase()} {
-                    img {
-                        width: ${PLANET_IMAGE_WIDTHS[
-                            `${planetName.toLowerCase()}Md` as keyof typeof PLANET_IMAGE_WIDTHS
-                        ]};
-                    }
+                .characteristic img {
+                    width: ${PLANET_IMAGE_WIDTHS[
+                        `${currentPlanetName.toLowerCase()}Md` as keyof typeof PLANET_IMAGE_WIDTHS
+                    ]};
                 }
             `}
     }
 
     // 1024px
     @media only screen and (min-width: 64em) {
-        ${({ planetName }) =>
-            planetName &&
+        ${({ currentPlanetName }) =>
+            currentPlanetName &&
             css`
-                &.${planetName.toLowerCase()} {
-                    img {
-                        width: ${PLANET_IMAGE_WIDTHS[
-                            `${planetName.toLowerCase()}Lg` as keyof typeof PLANET_IMAGE_WIDTHS
-                        ]};
-                    }
+                .characteristic img {
+                    width: ${PLANET_IMAGE_WIDTHS[
+                        `${currentPlanetName.toLowerCase()}Lg` as keyof typeof PLANET_IMAGE_WIDTHS
+                    ]};
                 }
             `}
     }

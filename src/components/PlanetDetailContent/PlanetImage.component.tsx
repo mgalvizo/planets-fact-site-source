@@ -4,66 +4,58 @@ import { getImageByKey } from '../../utils/getImageByKey';
 
 interface PlanetImageProps {
     children?: ReactNode;
-    selectedCharacteristic: string;
+    currentPlanetName: string;
+    currentCharacteristic: string | undefined;
     images: PlanetImages;
 }
 
 interface PlanetImages {
-    planetName: string;
-    overview: string;
-    structure: string;
-    geology: string;
+    overviewImgKey: string;
+    structureImgKey: string;
+    geologyImgKey: string;
 }
 
-const PlanetImage = ({ selectedCharacteristic, images }: PlanetImageProps) => {
-    const { planetName, overview, structure, geology } = images;
+const PlanetImage = ({
+    currentPlanetName,
+    currentCharacteristic,
+    images,
+}: PlanetImageProps) => {
+    const { overviewImgKey, structureImgKey, geologyImgKey } = images;
 
     let imgKey: string;
     let imgGeologyKey: string;
 
-    if (selectedCharacteristic === 'overview') {
-        imgKey = overview;
+    if (currentCharacteristic === 'overview') {
+        imgKey = overviewImgKey;
         imgGeologyKey = '';
-    } else if (selectedCharacteristic === 'structure') {
-        imgKey = structure;
+    } else if (currentCharacteristic === 'structure') {
+        imgKey = structureImgKey;
         imgGeologyKey = '';
+    } else if (currentCharacteristic === 'geology') {
+        imgKey = overviewImgKey;
+        imgGeologyKey = geologyImgKey;
     } else {
-        imgKey = overview;
-        imgGeologyKey = geology;
+        return <></>;
     }
 
     return (
         <StyledPlanetImage
-            planetName={planetName}
-            className={planetName.toLowerCase()}
+            currentPlanetName={currentPlanetName}
+            className={currentPlanetName.toLowerCase()}
         >
-            {!imgGeologyKey && (
-                <figure>
+            <figure className="characteristic">
+                <img
+                    src={getImageByKey(imgKey)}
+                    alt={`${currentPlanetName} ${currentCharacteristic}`}
+                />
+            </figure>
+            {imgGeologyKey && (
+                <figure className="characteristic geology">
                     <img
-                        src={getImageByKey(imgKey)}
-                        alt={`${planetName} ${selectedCharacteristic}`}
-                        loading="lazy"
+                        src={getImageByKey(imgGeologyKey)}
+                        alt={`${currentPlanetName} ${currentCharacteristic} zoomed`}
                     />
                 </figure>
-            )}
-
-            {imgGeologyKey && (
-                <>
-                    <figure>
-                        <img
-                            src={getImageByKey(imgKey)}
-                            alt={`${planetName} overview`}
-                            loading="lazy"
-                        />
-                    </figure>
-                    <figure>
-                        <img
-                            src={getImageByKey(imgGeologyKey)}
-                            alt={`${planetName} ${selectedCharacteristic}`}
-                            loading="lazy"
-                        />
-                    </figure>
-                </>
             )}
         </StyledPlanetImage>
     );

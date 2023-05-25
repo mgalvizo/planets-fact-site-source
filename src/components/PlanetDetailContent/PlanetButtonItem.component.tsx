@@ -1,4 +1,5 @@
-import React, { ReactNode, MouseEvent } from 'react';
+import React, { ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import StyledPlanetButtonItem from '../styled/PlanetButtonItem.styled';
 
 interface Characteristic {
@@ -8,37 +9,28 @@ interface Characteristic {
 
 interface PlanetButtonItemProps {
     children?: ReactNode;
-    onClick: (e: MouseEvent<HTMLButtonElement>) => void;
     characteristic: Characteristic;
-    selectedCharacteristic: string;
-    planetName: string;
+    currentPlanetName: string;
 }
 
 const PlanetButtonItem = ({
-    onClick,
     characteristic,
-    selectedCharacteristic,
-    planetName,
+    currentPlanetName,
 }: PlanetButtonItemProps) => {
     const { id, characteristicName } = characteristic;
 
     return (
         <StyledPlanetButtonItem
-            planetName={planetName.toLowerCase()}
+            currentPlanetName={currentPlanetName.toLowerCase()}
             characteristicName={characteristicName}
         >
-            <button
-                id={characteristicName}
-                onClick={onClick}
-                className={`${characteristicName} ${
-                    selectedCharacteristic === characteristicName
-                        ? 'active'
-                        : ''
-                }`}
+            <NavLink
+                className={characteristicName}
+                to={`/planets/${currentPlanetName.toLowerCase()}/${characteristicName}`}
             >
                 <span className="number">{`0${id}`}</span>
                 <span className="name">{characteristicName.toUpperCase()}</span>
-            </button>
+            </NavLink>
         </StyledPlanetButtonItem>
     );
 };

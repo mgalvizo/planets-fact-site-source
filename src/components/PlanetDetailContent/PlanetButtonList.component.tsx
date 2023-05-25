@@ -1,12 +1,10 @@
-import React, { ReactNode, MouseEvent } from 'react';
+import React, { ReactNode } from 'react';
 import StyledPlanetButtonList from '../styled/PlanetButtonList.styled';
 import PlanetButtonItem from './PlanetButtonItem.component';
 
 interface PlanetButtonListProps {
     children?: ReactNode;
-    onButtonClick: (e: MouseEvent<HTMLButtonElement>) => void;
-    selectedCharacteristic: string;
-    planetName: string;
+    currentPlanetName: string;
 }
 
 const MAPPING_PHYSICAL_CHARACTERISTICS = [
@@ -24,25 +22,21 @@ const MAPPING_PHYSICAL_CHARACTERISTICS = [
     },
 ];
 
-const PlanetButtonList = ({
-    onButtonClick,
-    selectedCharacteristic,
-    planetName,
-}: PlanetButtonListProps) => {
-    const buttons = MAPPING_PHYSICAL_CHARACTERISTICS.map(characteristic => {
-        const { id } = characteristic;
-        return (
-            <PlanetButtonItem
-                key={id}
-                onClick={onButtonClick}
-                characteristic={characteristic}
-                selectedCharacteristic={selectedCharacteristic}
-                planetName={planetName}
-            />
-        );
-    });
+const PlanetButtonList = ({ currentPlanetName }: PlanetButtonListProps) => {
+    const linksAsButtons = MAPPING_PHYSICAL_CHARACTERISTICS.map(
+        characteristic => {
+            const { id } = characteristic;
+            return (
+                <PlanetButtonItem
+                    key={id}
+                    characteristic={characteristic}
+                    currentPlanetName={currentPlanetName}
+                />
+            );
+        }
+    );
 
-    return <StyledPlanetButtonList>{buttons}</StyledPlanetButtonList>;
+    return <StyledPlanetButtonList>{linksAsButtons}</StyledPlanetButtonList>;
 };
 
 export default PlanetButtonList;

@@ -6,9 +6,9 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
     top: var(--header-height-sm);
     left: 0;
     width: 100%;
-    background-color: var(--very-dark-blue);
     padding: var(--website-padding-md) var(--website-padding-lg);
     list-style-type: none;
+    background-color: var(--very-dark-blue);
 
     &.slide-in-left-enter {
         transform: translateX(-100%);
@@ -37,14 +37,19 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: var(--website-padding-lg);
+        gap: calc((var(--website-margin-md) + var(--website-margin-lg)) / 2);
         background-color: transparent;
+    }
+
+    // 768px
+    @media only screen and (min-width: 48em) {
+        gap: var(--website-margin-xlg);
     }
 
     // 1024px
     @media only screen and (min-width: 64em) {
         height: inherit;
-        gap: var(--website-padding-xlg);
+        gap: var(--website-margin-xlg);
     }
 `;
 

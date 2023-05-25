@@ -17,12 +17,7 @@ const NavLinkItem = ({ planetName, onClick }: NavLinkItemProps) => {
                 className={planetName.toLowerCase()}
             >
                 {planetName.toUpperCase()}
-                <img
-                    className="chevron"
-                    src={iconChevron}
-                    alt="Chevron"
-                    loading="lazy"
-                />
+                <img className="chevron" src={iconChevron} alt="Chevron" />
             </NavLink>
         </StyledNavLinkItem>
     );

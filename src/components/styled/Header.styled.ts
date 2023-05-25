@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,6 +12,7 @@ const StyledHeader = styled.header`
     align-items: center;
     height: var(--header-height-sm);
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: var(--very-dark-blue);
 
     .stripe {
         padding-top: var(--website-padding-sm);
@@ -20,12 +25,17 @@ const StyledHeader = styled.header`
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        flex-basis: 100%;
     }
 
     // 620px
     @media only screen and (min-width: 38.75em) {
+        position: static;
+        top: auto;
+        left: auto;
         flex-direction: column;
         height: var(--header-height-md);
+        background-color: transparent;
 
         .stripe {
             height: 100%;

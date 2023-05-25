@@ -6,6 +6,7 @@ import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import PlanetsRootLayout from './pages/PlanetsRootLayout';
 import PlanetsPage from './pages/PlanetsPage';
+import PlanetDetailRootLayout from './pages/PlanetDetailRootLayout';
 import PlanetDetailPage, {
     loader as planetDetailLoader,
 } from './pages/PlanetDetailPage';
@@ -23,11 +24,23 @@ const router = createBrowserRouter([
                 children: [
                     { index: true, element: <PlanetsPage /> },
                     {
-                        path: ':name',
-                        loader: planetDetailLoader,
-                        id: 'planet-detail',
+                        path: ':planetName',
                         children: [
-                            { index: true, element: <PlanetDetailPage /> },
+                            {
+                                index: true,
+                                element: <PlanetDetailRootLayout />,
+                            },
+                            {
+                                path: ':characteristic',
+                                children: [
+                                    {
+                                        index: true,
+                                        loader: planetDetailLoader,
+                                        id: 'planet-detail',
+                                        element: <PlanetDetailPage />,
+                                    },
+                                ],
+                            },
                         ],
                     },
                 ],
