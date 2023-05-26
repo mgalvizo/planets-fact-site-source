@@ -43,7 +43,7 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 82px;
+        width: 109px;
     }
 
     ${({ currentPlanetName }) =>
@@ -59,12 +59,8 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
     // 620px
     @media only screen and (min-width: 38.75em) {
         .characteristic.geology img {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 109px;
+            width: 130px;
+            bottom: 36px;
         }
 
         ${({ currentPlanetName }) =>
@@ -80,6 +76,11 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
 
     // 1024px
     @media only screen and (min-width: 64em) {
+        .characteristic.geology img {
+            width: 163px;
+            bottom: 50px;
+        }
+
         ${({ currentPlanetName }) =>
             currentPlanetName &&
             css`

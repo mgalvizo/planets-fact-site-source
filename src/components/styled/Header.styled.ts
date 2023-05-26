@@ -14,18 +14,21 @@ const StyledHeader = styled.header`
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     background-color: var(--very-dark-blue);
 
-    .stripe {
+    .component {
         padding-top: var(--website-padding-sm);
         padding-bottom: var(--website-padding-sm);
+
+        .component__content {
+            flex-basis: var(--max-design-width);
+        }
     }
 
-    .stripe__content {
+    .component__content {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        flex-basis: 100%;
     }
 
     // 620px
@@ -37,13 +40,13 @@ const StyledHeader = styled.header`
         height: var(--header-height-md);
         background-color: transparent;
 
-        .stripe {
+        .component {
             height: 100%;
             padding-top: var(--website-padding-xlg);
             padding-bottom: var(--website-padding-xlg);
         }
 
-        .stripe__content {
+        .component__content {
             flex-direction: column;
         }
     }
@@ -53,12 +56,12 @@ const StyledHeader = styled.header`
         flex-direction: row;
         height: var(--header-height-lg);
 
-        .stripe {
+        .component {
             padding-top: 0;
             padding-bottom: 0;
         }
 
-        .stripe__content {
+        .component__content {
             flex-direction: row;
         }
     }

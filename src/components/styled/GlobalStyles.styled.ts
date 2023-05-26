@@ -4,6 +4,7 @@ import Stars from '../../assets/background-stars.svg';
 const GlobalStyle = createGlobalStyle`
 :root {
     --max-content-width: 1110px;
+    --max-design-width: 1440px;
     --base-font-size: 62.5%;
     --body-font: 'League Spartan', sans-serif;
     --body-font-size-sm: 1.1rem;
@@ -82,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
     --error-text-size: 1.6rem;
     --error-text-height: 1.5;
     /* SPACING */
+    --website-padding-xsm: 4px;
     --website-padding-sm: 8px;
     --website-padding-md: 16px;
     --website-padding-lg: 24px;
@@ -191,7 +193,7 @@ button {
     overflow-x: hidden;
 }
 
-.stripe {
+.component {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -199,7 +201,7 @@ button {
     flex-direction: row;
     padding: 0 var(--website-padding-lg);
 
-    .stripe__content {
+    .component__content {
         flex-basis: var(--max-content-width);
     }
 }
@@ -211,8 +213,28 @@ button {
         line-height: var(--body-line-height-md);
     }
 
-    .stripe {
+    .component {
         padding: 0 var(--website-padding-xlg2);
+    }
+
+    .grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0 var(--website-padding-xlg2) var(--website-margin-xlg);
+
+        .grid__content {
+            flex-basis: var(--max-content-width);
+        }
+
+        .component {
+            padding: 0;
+        }
+
+        .component__content {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -223,7 +245,11 @@ button {
         line-height: var(--body-line-height-lg);
     }
 
-    .stripe {
+    .grid {
+        padding: 0 var(--website-padding-xlg) calc(var(--website-margin-xlg) * 2);
+    }
+
+    .component {
         padding: 0 var(--website-padding-xlg);
     }
 }

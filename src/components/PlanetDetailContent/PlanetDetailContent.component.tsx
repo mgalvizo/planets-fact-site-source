@@ -49,39 +49,35 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
 
     return (
         <StyledPlanetDetailContent>
-            <aside className="planet-characteristics">
-                <div className="stripe">
-                    <div className="stripe__content">
-                        <PlanetButtonList currentPlanetName={planetName} />
+            <div className="grid">
+                <div className="grid__content">
+                    <aside className="component planet-characteristics">
+                        <div className="component__content">
+                            <PlanetButtonList currentPlanetName={planetName} />
+                        </div>
+                    </aside>
+                    <div className="component planet-image">
+                        <div className="component__content">
+                            <PlanetImage
+                                currentPlanetName={planetName}
+                                currentCharacteristic={characteristic}
+                                images={PLANET_IMAGES}
+                            />
+                        </div>
                     </div>
-                </div>
-            </aside>
-            <div className="planet-image">
-                <div className="stripe">
-                    <div className="stripe__content">
-                        <PlanetImage
-                            currentPlanetName={planetName}
-                            currentCharacteristic={characteristic}
-                            images={PLANET_IMAGES}
-                        />
-                    </div>
-                </div>
-            </div>
-            <section className="planet-info">
-                <div className="stripe">
-                    <div className="stripe__content">
-                        <PlanetInfo
-                            currentPlanetName={planetName}
-                            currentCharacteristic={characteristic}
-                            characteristics={PHYSICAL_CHARACTERISTICS}
-                        />
-                    </div>
-                </div>
-            </section>
-            <div className="planet-stats">
-                <div className="stripe">
-                    <div className="stripe__content">
-                        <PlanetStatsList stats={PLANET_STATS} />
+                    <section className="component planet-info">
+                        <div className="component__content">
+                            <PlanetInfo
+                                currentPlanetName={planetName}
+                                currentCharacteristic={characteristic}
+                                characteristics={PHYSICAL_CHARACTERISTICS}
+                            />
+                        </div>
+                    </section>
+                    <div className="component planet-stats">
+                        <div className="component__content">
+                            <PlanetStatsList stats={PLANET_STATS} />
+                        </div>
                     </div>
                 </div>
             </div>
