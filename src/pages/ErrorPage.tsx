@@ -26,8 +26,8 @@ const ErrorPage = () => {
         <>
             <div className="root__content">
                 <Header>
-                    <div className="stripe">
-                        <div className="stripe__content">
+                    <div className="component">
+                        <div className="component__content">
                             <Logo />
                             <Navigation />
                         </div>

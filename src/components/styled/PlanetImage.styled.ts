@@ -37,6 +37,32 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
     justify-content: center;
     align-items: center;
 
+    &.fade-in-scale-enter {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    &.fade-in-scale-enter-active {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: opacity, transform;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &.fade-in-scale-exit {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &.fade-in-scale-exit-active {
+        opacity: 0;
+        transform: scale(0);
+        transition-property: opacity, transform;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+    }
+
     .characteristic.geology img {
         position: absolute;
         bottom: 0;

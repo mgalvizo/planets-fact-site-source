@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useRef, useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import StyledPlanetImage from '../styled/PlanetImage.styled';
 import { getImageByKey } from '../../utils/getImageByKey';
 
@@ -21,6 +22,12 @@ const PlanetImage = ({
     images,
 }: PlanetImageProps) => {
     const { overviewImgKey, structureImgKey, geologyImgKey } = images;
+    const nodeRef = useRef(null);
+    const [prevPlanet, setPrevPlanet] = useState<string | undefined>('');
+
+    useEffect(() => {
+        setPrevPlanet(currentPlanetName.toLowerCase());
+    }, [currentPlanetName]);
 
     let imgKey: string;
     let imgGeologyKey: string;
@@ -39,25 +46,35 @@ const PlanetImage = ({
     }
 
     return (
-        <StyledPlanetImage
-            currentPlanetName={currentPlanetName}
-            className={currentPlanetName.toLowerCase()}
+        <CSSTransition
+            nodeRef={nodeRef}
+            in={prevPlanet === currentPlanetName.toLowerCase()}
+            timeout={250}
+            classNames="fade-in-scale"
+            mountOnEnter
+            unmountOnExit
         >
-            <figure className="characteristic">
-                <img
-                    src={getImageByKey(imgKey)}
-                    alt={`${currentPlanetName} ${currentCharacteristic}`}
-                />
-            </figure>
-            {imgGeologyKey && (
-                <figure className="characteristic geology">
+            <StyledPlanetImage
+                currentPlanetName={currentPlanetName}
+                className={currentPlanetName.toLowerCase()}
+                ref={nodeRef}
+            >
+                <figure className="characteristic">
                     <img
-                        src={getImageByKey(imgGeologyKey)}
-                        alt={`${currentPlanetName} ${currentCharacteristic} zoomed`}
+                        src={getImageByKey(imgKey)}
+                        alt={`${currentPlanetName} ${currentCharacteristic}`}
                     />
                 </figure>
-            )}
-        </StyledPlanetImage>
+                {imgGeologyKey && (
+                    <figure className="characteristic geology">
+                        <img
+                            src={getImageByKey(imgGeologyKey)}
+                            alt={`${currentPlanetName} ${currentCharacteristic} zoomed`}
+                        />
+                    </figure>
+                )}
+            </StyledPlanetImage>
+        </CSSTransition>
     );
 };
 
