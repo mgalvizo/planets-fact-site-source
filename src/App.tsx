@@ -11,43 +11,48 @@ import PlanetDetailPage, {
     loader as planetDetailLoader,
 } from './pages/PlanetDetailPage';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+    [
+        {
+            path: '/',
+            element: <RootLayout />,
+            errorElement: <ErrorPage />,
+            children: [
+                { index: true, element: <HomePage /> },
+                {
+                    path: 'planets',
+                    element: <PlanetsRootLayout />,
+                    children: [
+                        { index: true, element: <PlanetsPage /> },
+                        {
+                            path: ':planetName',
+                            children: [
+                                {
+                                    index: true,
+                                    element: <PlanetDetailRootLayout />,
+                                },
+                                {
+                                    path: ':characteristic',
+                                    children: [
+                                        {
+                                            index: true,
+                                            loader: planetDetailLoader,
+                                            id: 'planet-detail',
+                                            element: <PlanetDetailPage />,
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+    ],
     {
-        path: '/',
-        element: <RootLayout />,
-        errorElement: <ErrorPage />,
-        children: [
-            { index: true, element: <HomePage /> },
-            {
-                path: 'planets',
-                element: <PlanetsRootLayout />,
-                children: [
-                    { index: true, element: <PlanetsPage /> },
-                    {
-                        path: ':planetName',
-                        children: [
-                            {
-                                index: true,
-                                element: <PlanetDetailRootLayout />,
-                            },
-                            {
-                                path: ':characteristic',
-                                children: [
-                                    {
-                                        index: true,
-                                        loader: planetDetailLoader,
-                                        id: 'planet-detail',
-                                        element: <PlanetDetailPage />,
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-]);
+        basename: '/planets-fact-site',
+    }
+);
 
 const App = () => {
     return (

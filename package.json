@@ -2,6 +2,7 @@
     "name": "planets-fact-site",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://mgalvizo.github.io/planets-fact-site",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
@@ -13,6 +14,7 @@
         "@types/react-router-dom": "^5.3.3",
         "@types/react-transition-group": "^4.4.6",
         "@types/styled-components": "^5.1.26",
+        "gh-pages": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.11.1",
@@ -23,6 +25,8 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
