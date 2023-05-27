@@ -10,7 +10,7 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
     list-style-type: none;
     background-color: var(--very-dark-blue);
     // hidden by default
-    transform: translate(-100%);
+    transform: translateX(-100%);
 
     &.slide-in-left-enter {
         transform: translateX(-100%);
@@ -49,6 +49,7 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
         align-items: center;
         gap: calc((var(--website-margin-md) + var(--website-margin-lg)) / 2);
         background-color: transparent;
+        transform: translateX(0);
     }
 
     // 768px
