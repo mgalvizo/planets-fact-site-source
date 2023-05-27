@@ -46,7 +46,7 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
         opacity: 1;
         transform: rotate(0) scale(1);
         transition-property: opacity, transform;
-        transition-duration: 1s;
+        transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
     }
 
@@ -59,7 +59,7 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
         opacity: 0;
         transform: scale(0);
         transition-property: opacity, transform;
-        transition-duration: 1s;
+        transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
     }
 

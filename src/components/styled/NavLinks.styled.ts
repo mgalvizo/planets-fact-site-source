@@ -9,6 +9,8 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
     padding: var(--website-padding-md) var(--website-padding-lg);
     list-style-type: none;
     background-color: var(--very-dark-blue);
+    // hidden by default
+    transform: translate(-100%);
 
     &.slide-in-left-enter {
         transform: translateX(-100%);
@@ -19,6 +21,10 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
         transition: transform 0.25s;
     }
 
+    &.slide-in-left-enter-done {
+        transform: translateX(0);
+    }
+
     &.slide-in-left-exit {
         transform: translateX(0);
     }
@@ -26,6 +32,10 @@ const StyledMobileNavLinks = styled.ul<NavLinksProps>`
     &.slide-in-left-exit-active {
         transform: translateX(-100%);
         transition: transform 0.25s;
+    }
+
+    &.slide-in-left-exit-done {
+        transform: translateX(-100%);
     }
 
     // 620px
