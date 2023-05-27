@@ -93,7 +93,9 @@ const StyledPlanetDetailContent = styled.main`
 
             &.component {
                 padding-right: 0;
-                padding-left: var(--website-padding-md);
+                padding-left: calc(
+                    var(--website-padding-md) + var(--website-padding-xsm)
+                );
             }
         }
 
@@ -101,7 +103,9 @@ const StyledPlanetDetailContent = styled.main`
             align-items: start;
 
             &.component {
-                padding-left: 0;
+                padding-left: calc(
+                    var(--website-padding-md) + var(--website-padding-xsm)
+                );
             }
         }
 
