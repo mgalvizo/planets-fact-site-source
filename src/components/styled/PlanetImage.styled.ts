@@ -37,29 +37,29 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
     justify-content: center;
     align-items: center;
 
-    &.fade-in-scale-enter {
+    &.fade-in-scale-rotate-enter {
         opacity: 0;
-        transform: scale(0);
+        transform: rotate(90deg) scale(0);
     }
 
-    &.fade-in-scale-enter-active {
+    &.fade-in-scale-rotate-enter-active {
         opacity: 1;
-        transform: scale(1);
+        transform: rotate(0) scale(1);
         transition-property: opacity, transform;
-        transition-duration: 0.25s;
+        transition-duration: 1s;
         transition-timing-function: ease-in-out;
     }
 
-    &.fade-in-scale-exit {
+    &.fade-in-scale-rotate-exit {
         opacity: 1;
         transform: scale(1);
     }
 
-    &.fade-in-scale-exit-active {
+    &.fade-in-scale-rotate-exit-active {
         opacity: 0;
         transform: scale(0);
         transition-property: opacity, transform;
-        transition-duration: 0.25s;
+        transition-duration: 1s;
         transition-timing-function: ease-in-out;
     }
 

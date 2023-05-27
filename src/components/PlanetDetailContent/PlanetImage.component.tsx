@@ -49,8 +49,8 @@ const PlanetImage = ({
         <CSSTransition
             nodeRef={nodeRef}
             in={prevPlanet === currentPlanetName.toLowerCase()}
-            timeout={250}
-            classNames="fade-in-scale"
+            timeout={1000}
+            classNames="fade-in-scale-rotate"
             mountOnEnter
             unmountOnExit
         >
