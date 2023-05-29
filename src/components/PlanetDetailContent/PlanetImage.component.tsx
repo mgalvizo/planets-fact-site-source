@@ -23,10 +23,12 @@ const PlanetImage = ({
 }: PlanetImageProps) => {
     const { overviewImgKey, structureImgKey, geologyImgKey } = images;
     const nodeRef = useRef(null);
-    const [prevPlanet, setPrevPlanet] = useState<string | undefined>('');
+    const [prevPlanetName, setPrevPlanetName] = useState<string | undefined>(
+        ''
+    );
 
     useEffect(() => {
-        setPrevPlanet(currentPlanetName.toLowerCase());
+        setPrevPlanetName(currentPlanetName.toLowerCase());
     }, [currentPlanetName]);
 
     let imgKey: string;
@@ -48,7 +50,7 @@ const PlanetImage = ({
     return (
         <CSSTransition
             nodeRef={nodeRef}
-            in={prevPlanet === currentPlanetName.toLowerCase()}
+            in={prevPlanetName === currentPlanetName.toLowerCase()}
             timeout={500}
             classNames="fade-in-scale-rotate"
             mountOnEnter

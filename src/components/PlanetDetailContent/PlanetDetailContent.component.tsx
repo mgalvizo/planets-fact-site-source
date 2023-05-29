@@ -24,6 +24,7 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
         radius,
         temperature,
     } = planet;
+
     const planetImg = planetName.toLowerCase();
     const planetInternalImg = `${planetName.toLowerCase()}Internal`;
     const planetGeologyImg = `${planetName.toLowerCase()}Geology`;
