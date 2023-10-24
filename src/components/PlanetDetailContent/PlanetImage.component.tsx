@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef, useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import StyledPlanetImage from '../styled/PlanetImage.styled';
+import StyledPlanetImage from '../styled/PlanetDetailContent/PlanetImage.styled';
 import { getImageByKey } from '../../utils/getImageByKey';
 
 interface PlanetImageProps {

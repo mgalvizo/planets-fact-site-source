@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import StyledPlanetButtonList from '../styled/PlanetButtonList.styled';
+import StyledPlanetButtonList from '../styled/PlanetDetailContent/PlanetButtonList.styled';
 import PlanetButtonItem from './PlanetButtonItem.component';
 
 interface PlanetButtonListProps {

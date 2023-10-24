@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import StyledPlanetStatItem from '../styled/PlanetStatItem.styled';
+import StyledPlanetStatItem from '../styled/PlanetDetailContent/PlanetStatItem.styled';
 
 interface PlanetStatItemProps {
     children?: ReactNode;

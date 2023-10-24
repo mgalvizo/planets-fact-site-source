@@ -8,7 +8,7 @@ import { StyledErrorPageContent } from '../components/styled/pages/ErrorPage.sty
 import {
     StyledHeaderComponent,
     StyledHeaderComponentContent,
-} from '../components/styled/Header.styled';
+} from '../components/styled/Header/Header.styled';
 
 const ErrorPage = () => {
     const error = useRouteError();

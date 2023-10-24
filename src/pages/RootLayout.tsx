@@ -7,7 +7,7 @@ import { StyledRootLayoutContent } from '../components/styled/pages/RootLayout.s
 import {
     StyledHeaderComponent,
     StyledHeaderComponentContent,
-} from '../components/styled/Header.styled';
+} from '../components/styled/Header/Header.styled';
 
 const RootLayout = () => {
     return (

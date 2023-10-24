@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
     StyledRootLayoutComponent,
     StyledRootLayoutComponentContent,
-} from './pages/RootLayout.styled';
+} from '../pages/RootLayout.styled';
 
 const StyledHeader = styled.header`
     position: fixed;

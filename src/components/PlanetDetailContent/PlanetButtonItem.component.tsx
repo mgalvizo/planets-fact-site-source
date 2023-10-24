@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
-import StyledPlanetButtonItem from '../styled/PlanetButtonItem.styled';
+import StyledPlanetButtonItem from '../styled/PlanetDetailContent/PlanetButtonItem.styled';
 
 interface Characteristic {
     id: number;

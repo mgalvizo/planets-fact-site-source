@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import StyledPlanetInfo from '../styled/PlanetInfo.styled';
+import StyledPlanetInfo from '../styled/PlanetDetailContent/PlanetInfo.styled';
 import iconSource from '../../assets/icon-source.svg';
 
 interface PlanetInfoProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Planet } from '../../pages/PlanetDetailPage';
-import StyledPlanetDetailContent from '../styled/PlanetDetailContent.styled';
+import StyledPlanetDetailContent from '../styled/PlanetDetailContent/PlanetDetailContent.styled';
 import PlanetButtonList from './PlanetButtonList.component';
 import PlanetInfo from './PlanetInfo.component';
 import PlanetImage from './PlanetImage.component';
