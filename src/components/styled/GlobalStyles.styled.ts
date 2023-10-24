@@ -183,58 +183,11 @@ button {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-.root__content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-}
-
-.component {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 0 var(--website-padding-lg);
-
-    .component__content {
-        flex-basis: var(--max-content-width);
-    }
-}
-
 // 620px
 @media only screen and (min-width: 38.75em) {
     body {
         font-size: var(--body-font-size-md);
         line-height: var(--body-line-height-md);
-    }
-
-    .component {
-        padding: 0 var(--website-padding-xlg2);
-    }
-
-    .grid {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        padding: 0 var(--website-padding-xlg2) var(--website-margin-xlg);
-
-        .grid__content {
-            flex-basis: var(--max-content-width);
-        }
-
-        .component {
-            padding: 0;
-        }
-
-        .component__content {
-            flex-basis: 100%;
-        }
     }
 }
 
@@ -243,14 +196,6 @@ button {
     body {
         font-size: var(--body-font-size-lg);
         line-height: var(--body-line-height-lg);
-    }
-
-    .grid {
-        padding: 0 var(--website-padding-xlg) calc(var(--website-margin-xlg) * 2);
-    }
-
-    .component {
-        padding: 0 var(--website-padding-xlg);
     }
 }
 `;
