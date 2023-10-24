@@ -1,6 +1,6 @@
 import React, { MouseEvent, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import StyledNavLinks from '../styled/NavLinks.styled';
+import StyledNavLinks from '../styled/Navigation/NavLinks.styled';
 import NavLinkItem from './NavLinkItem.component';
 import PLANETS from '../../dev-data/planets.json';
 

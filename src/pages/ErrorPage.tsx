@@ -4,6 +4,11 @@ import Header from '../components/Header/Header.component';
 import Logo from '../components/Logo/Logo.component';
 import Navigation from '../components/Navigation/Navigation.component';
 import ErrorContent from '../components/ErrorContent/ErrorContent.component';
+import { StyledErrorPageContent } from '../components/styled/pages/ErrorPage.styled';
+import {
+    StyledHeaderComponent,
+    StyledHeaderComponentContent,
+} from '../components/styled/Header.styled';
 
 const ErrorPage = () => {
     const error = useRouteError();
@@ -24,17 +29,17 @@ const ErrorPage = () => {
 
     return (
         <>
-            <div className="root__content">
+            <StyledErrorPageContent>
                 <Header>
-                    <div className="component">
-                        <div className="component__content">
+                    <StyledHeaderComponent>
+                        <StyledHeaderComponentContent>
                             <Logo />
                             <Navigation />
-                        </div>
-                    </div>
+                        </StyledHeaderComponentContent>
+                    </StyledHeaderComponent>
                 </Header>
                 <ErrorContent title={title} message={message} />
-            </div>
+            </StyledErrorPageContent>
         </>
     );
 };

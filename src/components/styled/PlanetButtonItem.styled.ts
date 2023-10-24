@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PLANET_COLORS } from './NavLinkItem.styled';
+import { PLANET_COLORS } from './Navigation/NavLinkItem.styled';
 
 interface StyledPlanetButtonItemProps {
     currentPlanetName: string;

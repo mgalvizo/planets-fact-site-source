@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import StyledNavigation from '../styled/Navigation.styled';
+import StyledNavigation from '../styled/Navigation/Navigation.styled';
 import NavLinks from './NavLinks.component';
 import HamburguerButton from './HamburguerButton.component';
 

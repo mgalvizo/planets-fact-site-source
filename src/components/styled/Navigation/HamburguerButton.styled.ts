@@ -1,5 +1,18 @@
 import styled, { css } from 'styled-components';
-import { HamburguerButtonProps } from '../Navigation/HamburguerButton.component';
+import { HamburguerButtonProps } from '../../Navigation/HamburguerButton.component';
+
+const StyledHamburguerButtonBar = styled.span`
+    background-color: var(--light-gray);
+    display: block;
+    width: 24px;
+    height: 3px;
+`;
+
+const StyledHamburguerButtonBarOne = styled(StyledHamburguerButtonBar)``;
+
+const StyledHamburguerButtonBarTwo = styled(StyledHamburguerButtonBar)``;
+
+const StyledHamburguerButtonBarThree = styled(StyledHamburguerButtonBar)``;
 
 const StyledHamburguerButton = styled.button<HamburguerButtonProps>`
     background-color: transparent;
@@ -9,13 +22,6 @@ const StyledHamburguerButton = styled.button<HamburguerButtonProps>`
     align-items: center;
     justify-content: center;
     gap: var(--website-margin-xsm);
-
-    .bar {
-        background-color: var(--light-gray);
-        display: block;
-        width: 24px;
-        height: 3px;
-    }
 
     &:hover {
         cursor: pointer;
@@ -57,21 +63,29 @@ const StyledHamburguerButton = styled.button<HamburguerButtonProps>`
     ${({ isVisible }) =>
         isVisible &&
         css`
-            .bar-1 {
+            ${StyledHamburguerButtonBarOne} {
                 animation: flipBar1 0.25s ease-in-out;
                 animation-fill-mode: forwards;
             }
 
-            .bar-2 {
+            ${StyledHamburguerButtonBarTwo} {
                 animation: fadeBar2 0.25s ease-in-out;
                 animation-fill-mode: forwards;
             }
 
-            .bar-3 {
+            ${StyledHamburguerButtonBarThree} {
                 animation: flipBar3 0.25s ease-in-out;
                 animation-fill-mode: forwards;
             }
         `}
 `;
+
+export {
+    StyledHamburguerButtonBar,
+    StyledHamburguerButtonBarOne,
+    StyledHamburguerButtonBarTwo,
+    StyledHamburguerButtonBarThree,
+    StyledHamburguerButton,
+};
 
 export default StyledHamburguerButton;

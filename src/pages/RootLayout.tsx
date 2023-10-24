@@ -3,23 +3,28 @@ import { Outlet } from 'react-router-dom';
 import Header from '../components/Header/Header.component';
 import Logo from '../components/Logo/Logo.component';
 import Navigation from '../components/Navigation/Navigation.component';
+import { StyledRootLayoutContent } from '../components/styled/pages/RootLayout.styled';
+import {
+    StyledHeaderComponent,
+    StyledHeaderComponentContent,
+} from '../components/styled/Header.styled';
 
 const RootLayout = () => {
     return (
         <>
-            <div className="root__content">
+            <StyledRootLayoutContent>
                 <Header>
-                    <div className="component">
-                        <div className="component__content">
+                    <StyledHeaderComponent>
+                        <StyledHeaderComponentContent>
                             <Logo />
                             <Navigation />
-                        </div>
-                    </div>
+                        </StyledHeaderComponentContent>
+                    </StyledHeaderComponent>
                 </Header>
                 <>
                     <Outlet />
                 </>
-            </div>
+            </StyledRootLayoutContent>
         </>
     );
 };

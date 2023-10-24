@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { NavLink } from 'react-router-dom';
-import StyledNavLinkItem from '../styled/NavLinkItem.styled';
+import StyledNavLinkItem from '../styled/Navigation/NavLinkItem.styled';
 import iconChevron from '../../assets/icon-chevron.svg';
 
 export interface NavLinkItemProps {

@@ -1,5 +1,9 @@
 import React from 'react';
-import StyledErrorContent from '../styled/ErrorContent.styled';
+import {
+    StyledErrorContent,
+    StyledErrorContentStripe,
+    StyledErrorContentStripeContent,
+} from '../styled/ErrorContent/ErrorContent.styled';
 
 interface ErrorContentProps {
     title: string;
@@ -9,12 +13,12 @@ interface ErrorContentProps {
 const ErrorContent = ({ title, message }: ErrorContentProps) => {
     return (
         <StyledErrorContent>
-            <div className="stripe">
-                <div className="stripe__content">
+            <StyledErrorContentStripe>
+                <StyledErrorContentStripeContent>
                     <h2>{title}</h2>
                     <p>{message}</p>
-                </div>
-            </div>
+                </StyledErrorContentStripeContent>
+            </StyledErrorContentStripe>
         </StyledErrorContent>
     );
 };

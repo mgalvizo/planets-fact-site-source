@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLinksProps } from '../Navigation/NavLinks.component';
+import { NavLinksProps } from '../../Navigation/NavLinks.component';
 
 const StyledMobileNavLinks = styled.ul<NavLinksProps>`
     position: fixed;
