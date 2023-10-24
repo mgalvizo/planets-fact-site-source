@@ -1,6 +1,10 @@
 import React, { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
-import StyledPlanetButtonItem from '../styled/PlanetDetailContent/PlanetButtonItem.styled';
+import {
+    StyledPlanetButtonItemName,
+    StyledPlanetButtonItem,
+    StyledPlanetButtonItemNumber,
+} from '../styled/PlanetDetailContent/PlanetButtonItem.styled';
 
 interface Characteristic {
     id: number;
@@ -28,8 +32,10 @@ const PlanetButtonItem = ({
                 className={characteristicName}
                 to={`/planets/${currentPlanetName.toLowerCase()}/${characteristicName}`}
             >
-                <span className="number">{`0${id}`}</span>
-                <span className="name">{characteristicName.toUpperCase()}</span>
+                <StyledPlanetButtonItemNumber>{`0${id}`}</StyledPlanetButtonItemNumber>
+                <StyledPlanetButtonItemName>
+                    {characteristicName.toUpperCase()}
+                </StyledPlanetButtonItemName>
             </NavLink>
         </StyledPlanetButtonItem>
     );

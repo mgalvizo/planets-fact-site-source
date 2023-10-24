@@ -1,5 +1,9 @@
 import React, { ReactNode } from 'react';
-import StyledPlanetInfo from '../styled/PlanetDetailContent/PlanetInfo.styled';
+import {
+    StyledPlanetInfo,
+    StyledPlanetInfoDescription,
+    StyledPlanetInfoSource,
+} from '../styled/PlanetDetailContent/PlanetInfo.styled';
 import iconSource from '../../assets/icon-source.svg';
 
 interface PlanetInfoProps {
@@ -50,13 +54,15 @@ const PlanetInfo = ({
     return (
         <StyledPlanetInfo>
             <h2>{currentPlanetName}</h2>
-            <p className="description">{characteristicDescription}</p>
-            <p className="source">
+            <StyledPlanetInfoDescription>
+                {characteristicDescription}
+            </StyledPlanetInfoDescription>
+            <StyledPlanetInfoSource>
                 Source:{' '}
                 <a href={characteristicSource} target="_blank" rel="noreferrer">
                     Wikipedia <img src={iconSource} alt="source" />
                 </a>
-            </p>
+            </StyledPlanetInfoSource>
         </StyledPlanetInfo>
     );
 };

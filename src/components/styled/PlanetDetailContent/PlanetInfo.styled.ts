@@ -15,14 +15,6 @@ const StyledPlanetInfo = styled.div`
         text-decoration: underline;
     }
 
-    .description {
-        margin-bottom: var(--website-margin-xlg);
-    }
-
-    .source {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
     // 620px
     @media only screen and (min-width: 38.75em) {
         text-align: left;
@@ -40,11 +32,24 @@ const StyledPlanetInfo = styled.div`
             font-size: var(--planet-title-size-lg);
             line-height: var(--planet-title-height-lg);
         }
-
-        .description {
-            margin-bottom: var(--website-margin-lg);
-        }
     }
 `;
 
-export default StyledPlanetInfo;
+const StyledPlanetInfoDescription = styled.p`
+    margin-bottom: var(--website-margin-xlg);
+
+    // 1024px
+    @media only screen and (min-width: 64em) {
+        margin-bottom: var(--website-margin-lg);
+    }
+`;
+
+const StyledPlanetInfoSource = styled.p`
+    color: rgba(255, 255, 255, 0.5);
+`;
+
+export {
+    StyledPlanetInfo,
+    StyledPlanetInfoDescription,
+    StyledPlanetInfoSource,
+};

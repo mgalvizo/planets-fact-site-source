@@ -1,5 +1,9 @@
 import React, { ReactNode } from 'react';
-import StyledPlanetStatItem from '../styled/PlanetDetailContent/PlanetStatItem.styled';
+import {
+    StyledPlanetStatItem,
+    StyledPlanetStatItemTitle,
+    StyledPlanetStatItemDescription,
+} from '../styled/PlanetDetailContent/PlanetStatItem.styled';
 
 interface PlanetStatItemProps {
     children?: ReactNode;
@@ -16,8 +20,10 @@ const PlanetStatItem = ({ stat }: PlanetStatItemProps) => {
     const { title, data } = stat;
     return (
         <StyledPlanetStatItem>
-            <h3>{title}</h3>
-            <p>{data}</p>
+            <StyledPlanetStatItemTitle>{title}</StyledPlanetStatItemTitle>
+            <StyledPlanetStatItemDescription>
+                {data}
+            </StyledPlanetStatItemDescription>
         </StyledPlanetStatItem>
     );
 };

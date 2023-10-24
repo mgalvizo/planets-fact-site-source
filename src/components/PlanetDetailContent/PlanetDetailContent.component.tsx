@@ -1,7 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Planet } from '../../pages/PlanetDetailPage';
-import StyledPlanetDetailContent from '../styled/PlanetDetailContent/PlanetDetailContent.styled';
+import {
+    StyledPlanetDetailContent,
+    StyledPlanetDetailGrid,
+    StyledPlanetDetailGridContent,
+    StyledPlanetCharacteristicsComponent,
+    StyledPlanetCharacteristicsContent,
+    StyledPlanetImageComponent,
+    StyledPlanetImageContent,
+    StyledPlanetInfoComponent,
+    StyledPlanetInfoContent,
+    StyledPlanetStatsComponent,
+    StyledPlanetStatsContent,
+} from '../styled/PlanetDetailContent/PlanetDetailContent.styled';
 import PlanetButtonList from './PlanetButtonList.component';
 import PlanetInfo from './PlanetInfo.component';
 import PlanetImage from './PlanetImage.component';
@@ -50,38 +62,42 @@ const PlanetDetailContent = ({ planet }: PlanetDetailContentProps) => {
 
     return (
         <StyledPlanetDetailContent>
-            <div className="grid">
-                <div className="grid__content">
-                    <aside className="component planet-characteristics">
-                        <div className="component__content">
+            <StyledPlanetDetailGrid>
+                <StyledPlanetDetailGridContent>
+                    <StyledPlanetCharacteristicsComponent
+                        id="planet-characteristics"
+                        className="component "
+                        as="aside"
+                    >
+                        <StyledPlanetCharacteristicsContent>
                             <PlanetButtonList currentPlanetName={planetName} />
-                        </div>
-                    </aside>
-                    <div className="component planet-image">
-                        <div className="component__content">
+                        </StyledPlanetCharacteristicsContent>
+                    </StyledPlanetCharacteristicsComponent>
+                    <StyledPlanetImageComponent id="planet-image">
+                        <StyledPlanetImageContent>
                             <PlanetImage
                                 currentPlanetName={planetName}
                                 currentCharacteristic={characteristic}
                                 images={PLANET_IMAGES}
                             />
-                        </div>
-                    </div>
-                    <section className="component planet-info">
-                        <div className="component__content">
+                        </StyledPlanetImageContent>
+                    </StyledPlanetImageComponent>
+                    <StyledPlanetInfoComponent id="planet-info" as="section">
+                        <StyledPlanetInfoContent>
                             <PlanetInfo
                                 currentPlanetName={planetName}
                                 currentCharacteristic={characteristic}
                                 characteristics={PHYSICAL_CHARACTERISTICS}
                             />
-                        </div>
-                    </section>
-                    <div className="component planet-stats">
-                        <div className="component__content">
+                        </StyledPlanetInfoContent>
+                    </StyledPlanetInfoComponent>
+                    <StyledPlanetStatsComponent id="planet-stats">
+                        <StyledPlanetStatsContent>
                             <PlanetStatsList stats={PLANET_STATS} />
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </StyledPlanetStatsContent>
+                    </StyledPlanetStatsComponent>
+                </StyledPlanetDetailGridContent>
+            </StyledPlanetDetailGrid>
         </StyledPlanetDetailContent>
     );
 };

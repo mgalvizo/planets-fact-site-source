@@ -1,6 +1,10 @@
 import React, { ReactNode, useRef, useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import StyledPlanetImage from '../styled/PlanetDetailContent/PlanetImage.styled';
+import {
+    StyledPlanetImageGeology,
+    StyledPlanetImage,
+    StyledPlanetImageCharacteristic,
+} from '../styled/PlanetDetailContent/PlanetImage.styled';
 import { getImageByKey } from '../../utils/getImageByKey';
 
 interface PlanetImageProps {
@@ -61,19 +65,19 @@ const PlanetImage = ({
                 className={currentPlanetName.toLowerCase()}
                 ref={nodeRef}
             >
-                <figure className="characteristic">
+                <StyledPlanetImageCharacteristic>
                     <img
                         src={getImageByKey(imgKey)}
                         alt={`${currentPlanetName} ${currentCharacteristic}`}
                     />
-                </figure>
+                </StyledPlanetImageCharacteristic>
                 {imgGeologyKey && (
-                    <figure className="characteristic geology">
+                    <StyledPlanetImageGeology>
                         <img
                             src={getImageByKey(imgGeologyKey)}
                             alt={`${currentPlanetName} ${currentCharacteristic} zoomed`}
                         />
-                    </figure>
+                    </StyledPlanetImageGeology>
                 )}
             </StyledPlanetImage>
         </CSSTransition>

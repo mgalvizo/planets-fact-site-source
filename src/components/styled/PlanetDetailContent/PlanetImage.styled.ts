@@ -31,6 +31,35 @@ const PLANET_IMAGE_WIDTHS = {
     neptuneLg: '450px',
 };
 
+const StyledPlanetImageCharacteristic = styled.figure``;
+
+const StyledPlanetImageGeology = styled.figure`
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 109px;
+    }
+
+    // 620px
+    @media only screen and (min-width: 38.75em) {
+        img {
+            width: 130px;
+            bottom: 36px;
+        }
+    }
+
+    // 1024px
+    @media only screen and (min-width: 64em) {
+        img {
+            width: 163px;
+            bottom: 50px;
+        }
+    }
+`;
+
 const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
     display: flex;
     flex-flow: column wrap;
@@ -63,19 +92,10 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
         transition-timing-function: ease-in-out;
     }
 
-    .characteristic.geology img {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 109px;
-    }
-
     ${({ currentPlanetName }) =>
         currentPlanetName &&
         css`
-            .characteristic img {
+            ${StyledPlanetImageCharacteristic} img {
                 width: ${PLANET_IMAGE_WIDTHS[
                     `${currentPlanetName.toLowerCase()}Sm` as keyof typeof PLANET_IMAGE_WIDTHS
                 ]};
@@ -84,15 +104,10 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
 
     // 620px
     @media only screen and (min-width: 38.75em) {
-        .characteristic.geology img {
-            width: 130px;
-            bottom: 36px;
-        }
-
         ${({ currentPlanetName }) =>
             currentPlanetName &&
             css`
-                .characteristic img {
+                ${StyledPlanetImageCharacteristic} img {
                     width: ${PLANET_IMAGE_WIDTHS[
                         `${currentPlanetName.toLowerCase()}Md` as keyof typeof PLANET_IMAGE_WIDTHS
                     ]};
@@ -102,15 +117,10 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
 
     // 1024px
     @media only screen and (min-width: 64em) {
-        .characteristic.geology img {
-            width: 163px;
-            bottom: 50px;
-        }
-
         ${({ currentPlanetName }) =>
             currentPlanetName &&
             css`
-                .characteristic img {
+                ${StyledPlanetImageCharacteristic} img {
                     width: ${PLANET_IMAGE_WIDTHS[
                         `${currentPlanetName.toLowerCase()}Lg` as keyof typeof PLANET_IMAGE_WIDTHS
                     ]};
@@ -119,4 +129,8 @@ const StyledPlanetImage = styled.div<StyledPlanetImageProps>`
     }
 `;
 
-export default StyledPlanetImage;
+export {
+    StyledPlanetImageGeology,
+    StyledPlanetImage,
+    StyledPlanetImageCharacteristic,
+};

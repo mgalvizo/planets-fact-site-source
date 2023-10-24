@@ -6,6 +6,8 @@ interface StyledPlanetButtonItemProps {
     characteristicName: string;
 }
 
+const StyledPlanetButtonItemName = styled.span``;
+
 const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
     height: inherit;
 
@@ -30,10 +32,6 @@ const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
         }
     }
 
-    .number {
-        display: none;
-    }
-
     ${({ currentPlanetName, characteristicName }) =>
         currentPlanetName &&
         characteristicName &&
@@ -54,11 +52,6 @@ const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
         height: var(--planet-button-item-height-md);
         width: 100%;
 
-        .number {
-            display: block;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
         a:link,
         a:visited {
             flex-direction: row;
@@ -77,7 +70,7 @@ const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
             }
 
             &.structure {
-                .name {
+                ${StyledPlanetButtonItemName} {
                     &::before {
                         content: 'INTERNAL ';
                     }
@@ -85,7 +78,7 @@ const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
             }
 
             &.geology {
-                .name {
+                ${StyledPlanetButtonItemName} {
                     &::before {
                         content: 'SURFACE ';
                     }
@@ -132,4 +125,18 @@ const StyledPlanetButtonItem = styled.li<StyledPlanetButtonItemProps>`
     }
 `;
 
-export default StyledPlanetButtonItem;
+const StyledPlanetButtonItemNumber = styled.span`
+    display: none;
+
+    // 620px
+    @media only screen and (min-width: 38.75em) {
+        display: block;
+        color: rgba(255, 255, 255, 0.75);
+    }
+`;
+
+export {
+    StyledPlanetButtonItemName,
+    StyledPlanetButtonItem,
+    StyledPlanetButtonItemNumber,
+};
