@@ -78,10 +78,6 @@ const StyledNavLinkItem = styled.li<StyledNavLinkItemProps>`
             border-bottom: 0;
         }
 
-        .chevron {
-            display: none;
-        }
-
         a:visited,
         a:link {
             color: rgba(255, 255, 255, 0.75);
@@ -141,4 +137,11 @@ const StyledNavLinkItem = styled.li<StyledNavLinkItemProps>`
     }
 `;
 
-export default StyledNavLinkItem;
+const StyledNavLinkItemChevron = styled.img`
+    // 620px
+    @media only screen and (min-width: 38.75em) {
+        display: none;
+    }
+`;
+
+export { StyledNavLinkItem, StyledNavLinkItemChevron };
